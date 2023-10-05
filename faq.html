@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SteinGalen - FAQ</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="flex-container">
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="fig/logo/steingalen_logo.svg" alt="Steingalen Logo">
+            </a>
+        </div>
+        <div class="cart-button">
+            <a href="cart.html" class="button"><strong>CART</strong></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="apparel.html"><strong>APPAREL</strong></a></li>
+                <li><a href="contact.html"><strong>CONTACT</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="faq-main">
+            <h1>Frequently Asked Questions</h1>
+        </section>
+
+        <!-- Ordering Process -->
+        <section class="faq-category">
+            <h2>Ordering Process</h2>
+            <div class="faq-item mb-3 mt-3">
+                <button class="faq-question" onclick="toggleAnswer(this)">How to place an order?</button>
+                <div class="faq-answer">
+                    <p>Browse our collection, select your desired item, choose the size and quantity, then click 'Add to
+                        Cart'. Review your cart and proceed to checkout.</p>
+                </div>
+            </div>
+            <div class="faq-item mb-3 mt-3">
+                <button class="faq-question" onclick="toggleAnswer(this)">Accepted payment methods?</button>
+                <div class="faq-answer">
+                    <p>We accept Visa and Mastercard, Vipps, and Apple Pay.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shipping & Delivery -->
+        <section class="faq-category">
+            <h2>Shipping & Delivery</h2>
+            <div class="faq-item mb-3 mt-3">
+                <button class="faq-question" onclick="toggleAnswer(this)">Shipping rates and options?</button>
+                <div class="faq-answer">
+                    <p>We offer flat-rate shipping through Bring, with no other options available.</p>
+                </div>
+            </div>
+            <div class="faq-item mb-3 mt-3">
+                <button class="faq-question" onclick="toggleAnswer(this)">International shipping details?</button>
+                <div class="faq-answer">
+                    <p>We do offer international shipping. The rates and delivery times may vary based on your location.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item mb-3 mt-3">
+                <button class="faq-question" onclick="toggleAnswer(this)">Tracking an order?</button>
+                <div class="faq-answer">
+                    <p>Upon shipment, you'll receive an email with tracking information to follow your order's journey.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Returns & Exchanges -->
+        <section class="faq-category">
+            <h2>Returns & Exchanges</h2>
+            <div class="faq-item mb-3 mt-3">
+                <button class="faq-question" onclick="toggleAnswer(this)">What is your return policy?</button>
+                <div class="faq-answer">
+                    <p>All sales are final.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Information -->
+        <section class="faq-category">
+            <h2>Product Information</h2>
+            <div class="faq-item mb-3 mt-3">
+                <button class="faq-question" onclick="toggleAnswer(this)">What sizes are available?</button>
+                <div class="faq-answer">
+                    <p>We offer sizes ranging from S to 2XL.</p>
+                </div>
+            </div>
+            <div class="faq-item mb-3 mt-3">
+                <button class="faq-question" onclick="toggleAnswer(this)">Which materials and how do I care for my
+                    product?</button>
+                <div class="faq-answer">
+                    <p>Our products are made of high-quality cotton. Machine wash cold with like colors and tumble dry
+                        low.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="faq-category">
+            <h2>Contact</h2>
+            <div class="faq-item mb-3 mt-3">
+                <button class="faq-question" onclick="toggleAnswer(this)">How can I get in touch for further
+                    questions?</button>
+                <div class="faq-answer">
+                    <p>Feel free to visit our Contact page or email us directly at support@example.com."</p>
+                </div>
+            </div>
+            <div class="faq-item mb-3 mt-3">
+                <button class="faq-question" onclick="toggleAnswer(this)">Business enquiries?</button>
+                <div class="faq-answer">
+                    <p>For business inquiries, please email us at business@example.com.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Info -->
+        <section class="contact-info">
+            <p>Can't find the answer you're looking for? <a href="contact.html">Contact us</a>.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="fixed-footer text-white text-center py-4">
+        <div class="container">
+            <div class="social-media mb-4 mt-4">
+                <a href="faq.html" class="text-white mx-2">FAQ</a>
+            </div>
+            <p class="mb-0">&copy; 2023 Steingalen. All rights reserved.</p>
+            <div class="mb-3 mt-3">
+                <a href="#" class="text-white mx-2">Facebook</a> |
+                <a href="#" class="text-white mx-2">Instagram</a> |
+                <a href="#" class="text-white mx-2">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>

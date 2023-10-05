@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SteinGalen - Cart</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="flex-container">
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="fig/logo/steingalen_logo.svg" alt="Steingalen Logo">
+            </a>
+        </div>
+        <div class="cart-button">
+            <a href="cart.html" class="button"><strong>CART</strong></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="apparel.html"><strong>APPAREL</strong></a></li>
+                <li><a href="contact.html"><strong>CONTACT</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-2"></div> <!-- Column 1: margin -->
+            <div class="col-10 mb-4 mt-4">
+                <h1>My Cart</h1>
+            </div>
+        </div>
+        <div id="cart-items-container"></div> <!-- Container for cart items -->
+        <!-- Checkout Button Row -->
+        <div class="row mb-4, mt-4">
+            <div class="col-2"></div> <!-- Column 1: margin -->
+            <div class="col-2"></div> <!-- Column 2 -->
+            <div class="col-3"></div> <!-- Column 3 -->
+            <div class="col-2 text-right"></div> <!-- Column 4 -->
+            <div class="col-2 text-right">
+                <button class="btn btn-primary" onclick="attemptCheckout()">CHECKOUT</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="fixed-footer text-white text-center py-4">
+        <div class="container">
+            <div class="social-media mb-4 mt-4">
+                <a href="faq.html" class="text-white mx-2">FAQ</a>
+            </div>
+            <p class="mb-0">&copy; 2023 Steingalen. All rights reserved.</p>
+            <div class="mb-3 mt-3">
+                <a href="#" class="text-white mx-2">Facebook</a> |
+                <a href="#" class="text-white mx-2">Instagram</a> |
+                <a href="#" class="text-white mx-2">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+
+    <script>
+        window.onload = function () {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items-container');
+            let totalPrice = 0;
+
+            cart.forEach((product, index) => {
+                const productTotalPrice = (parseFloat(product.price) * parseInt(product.quantity)).toFixed(2);
+                totalPrice += parseFloat(productTotalPrice);
+                const cartItemHTML = `
+            <div class="row mb-4">
+                <div class="col-2"></div>  <!-- Column 1: margin -->
+                <div class="col-2">
+                    <img src="fig/products/${product.imageName}" alt="${product.productName}" class="img-fluid">
+                </div>
+                <div class="col-3">
+                    <p>${product.productName}</p>
+                    <p>Size: ${product.size}</p>
+                    <input type="number" value="${product.quantity}" min="1" class="quantity-input" id="quantity-${index}" oninput="updateCart(${index})">
+                </div>
+                <div class="col-2 text-right">
+                    <p id="total-product-price-${index}">NOK ${productTotalPrice}</p>
+                </div>
+                <div class="col-2 text-right">
+                    <button onclick="removeItem('${product.productName}')" class="btn btn-danger">Remove Item</button>
+                </div>
+            </div>
+            <hr>
+        `;
+                cartItemsContainer.innerHTML += cartItemHTML;
+            });
+            // New row for Total price
+            const totalRowHTML = `
+        <div class="row">
+            <div class="col-2"></div>  <!-- Column 1: margin -->
+            <div class="col-2"></div>  <!-- Column 2 -->
+            <div class="col-3"></div>  <!-- Column 3 -->
+            <div class="col-2 text-right">
+                <strong>Total: </strong>
+            </div>
+            <div class="col-2 text-right">
+                <strong><p id="total-price">NOK ${totalPrice.toFixed(2)}</p></strong>
+            </div>
+        </div>
+    `;
+            cartItemsContainer.innerHTML += totalRowHTML;
+        }
+
+        function updateCart(index) {
+            const newQuantity = document.getElementById(`quantity-${index}`).value;
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart[index].quantity = newQuantity;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            const newTotalPrice = (parseFloat(cart[index].price) * parseInt(newQuantity)).toFixed(2);
+            document.getElementById(`total-product-price-${index}`).textContent = 'NOK ' + newTotalPrice;
+            let totalPrice = 0;
+            cart.forEach((product, index) => {
+                const productTotalPrice = (parseFloat(product.price) * parseInt(product.quantity)).toFixed(2);
+                totalPrice += parseFloat(productTotalPrice);
+            });
+            document.getElementById(`total-price`).textContent = 'NOK ' + totalPrice.toFixed(2);
+        }
+
+        function removeItem(productName) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const updatedCart = cart.filter(product => product.productName !== productName);
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+            window.location.reload();  // Reload the page to reflect the updated cart
+        }
+
+    </script>
+
+</body>
+
+</html>

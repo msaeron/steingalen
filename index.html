@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SteinGalen - Home</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="fig/logo/steingalen_logo.svg" alt="Steingalen Logo">
+      </a>
+    </div>
+    <div class="cart-button">
+      <a href="cart.html" class="button"><strong>CART</strong></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="apparel.html"><strong>APPAREL</strong></a></li>
+        <li><a href="contact.html"><strong>CONTACT</strong></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Banner Section -->
+    <section class="banner">
+      <img src="fig/products/steingalen_banner.svg" alt="Steingalen Banner" class="img-fluid w-100">
+    </section>
+
+    <!-- Text Section -->
+    <section class="text-section text-center py-4">
+      <br> <!-- Line break before your text -->
+      <p>Mix climbing adventure, training, and problem solving with laughter!</p>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products py-5">
+      <div class="container text-center">
+        <h2 class="mb-4">Featured Products!</h2>
+        <p>Check out our most popular products!</p>
+        <br> <!-- Line break before your text -->
+        <div class="row row-centered-columns" id="featured-products-row">
+          <!-- Product cards will be appended here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="new-arrivals py-5">
+      <div class="container text-center">
+        <h2 class="mb-4">New Arrivals!</h2>
+        <p>Take a look at our latest additions!</p>
+        <br> <!-- Line break before your text -->
+        <div class="row row-centered-columns" id="new-arrivals-row">
+          <!-- Product cards will be appended here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about py-5">
+
+    </section>
+
+    <div id="notification" class="notification"></div>
+
+
+    <hr>
+    <!-- Text Section -->
+    <section class="text-section text-center py-4">
+      <div class="container">
+        <h2 class="mb-4">SteinGalen</h2>
+        <p>Climbing t-shirts should not only capture the breathtaking vistas you encounter, but also
+          the quirky moments that makes every ascent memorable.</p>
+        <p> We embrace a community
+          that bonds over shared laughter, problem solving and adventure.</p>
+        <p>Invite the joy of the journey!</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="fixed-footer text-white text-center py-4">
+    <div class="container">
+      <div class="social-media mb-4 mt-4">
+        <a href="faq.html" class="text-white mx-2">FAQ</a>
+      </div>
+      <p class="mb-0">&copy; 2023 Steingalen. All rights reserved.</p>
+      <div class="mb-3 mt-3">
+        <a href="#" class="text-white mx-2">Facebook</a> |
+        <a href="#" class="text-white mx-2">Instagram</a> |
+        <a href="#" class="text-white mx-2">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="scripts.js"></script>
+  <script>
+    const products_featured = [
+      { imageName: 't-shirt-dino.svg', productName: 'Dino Dyno', price: '200.00' },
+      { imageName: 't-shirt-steingalen.svg', productName: 'SteinGalen', price: '300.00' },
+      { imageName: 't-shirt-slabking.svg', productName: 'King of slab', price: '300.00' },
+      // ... add more products as needed
+    ];
+
+    const products_new = [
+      { imageName: 't-shirt-allez.svg', productName: 'Allez! ', price: '350.00' },
+      { imageName: 't-shirt-flash.svg', productName: 'The Flash!', price: '350.00' },
+      { imageName: 't-shirt-chalkup.svg', productName: 'Chalk Up!', price: '350.00' },
+      // ... add more products as needed
+    ];
+
+    const featuredProductsRow = document.getElementById('featured-products-row');
+    const newArrivalsRow = document.getElementById('new-arrivals-row');
+
+    products_featured.forEach(product => {
+      const productCardHTML = createProductCard(product.imageName, product.productName, product.price, 4, 4);
+      featuredProductsRow.innerHTML += productCardHTML;
+    });
+    products_new.forEach(product => {
+      const productCardHTML = createProductCard(product.imageName, product.productName, product.price, 4, 4);
+      newArrivalsRow.innerHTML += productCardHTML;
+    });
+  </script>
+
+</body>
+
+</html>

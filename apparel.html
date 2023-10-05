@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SteinGalen - Apparel</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="fig/logo/steingalen_logo.svg" alt="Steingalen Logo">
+      </a>
+    </div>
+    <div class="cart-button">
+      <a href="cart.html" class="button"><strong>CART</strong></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="apparel.html"><strong>APPAREL</strong></a></li>
+        <li><a href="contact.html"><strong>CONTACT</strong></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- All Products -->
+    <section class="featured-products py-5">
+      <div class="container text-center">
+        <h1 class="mb-6 md-4"><strong>APPAREL</strong></h1>
+        <br>
+        <p>Capture the quirky moments that makes every ascent memorable.</p>
+        <br>
+        <br>
+        <div class="row row-centered-columns" id="all-products-row">
+          <!-- Product cards will be appended here -->
+        </div>
+      </div>
+    </section>
+
+    <div id="notification" class="notification"></div>
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="fixed-footer text-white text-center py-4">
+    <div class="container">
+      <div class="social-media mb-4 mt-4">
+        <a href="faq.html" class="text-white mx-2">FAQ</a>
+      </div>
+      <p class="mb-0">&copy; 2023 Steingalen. All rights reserved.</p>
+      <div class="mb-3 mt-3">
+        <a href="#" class="text-white mx-2">Facebook</a> |
+        <a href="#" class="text-white mx-2">Instagram</a> |
+        <a href="#" class="text-white mx-2">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="scripts.js"></script>
+  <script>
+    const products_all = [
+      { imageName: 't-shirt-dino.svg', productName: 'Dino Dyno', price: '200.00' },
+      { imageName: 't-shirt-steingalen.svg', productName: 'SteinGalen', price: '300.00' },
+      { imageName: 't-shirt-slabking.svg', productName: 'King of Slab', price: '350.00' },
+      { imageName: 't-shirt-allez.svg', productName: 'Allez!', price: '250.00' },
+      { imageName: 't-shirt-chalkup.svg', productName: 'Chalk Up!', price: '300.00' },
+      { imageName: 't-shirt-flash.svg', productName: 'The Flash!', price: '300.00' },
+      // ... add more products as needed
+    ];
+    const allProductsRow = document.getElementById('all-products-row')
+    products_all.forEach(product => {
+      const productCardHTML = createProductCard(product.imageName, product.productName, product.price, 6, 4);
+      allProductsRow.innerHTML += productCardHTML;
+    });
+  </script>
+</body>
+
+</html>

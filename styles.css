@@ -1,0 +1,284 @@
+/* Import the Inter font */
+/*TO-DO: download font to not require internet access*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+    --main-color: #9868ff;
+}
+
+/* Apply the Inter font to the entire webpage */
+body {
+    font-family: 'Inter', sans-serif !important;
+    /* To ensure content doesn't get hidden behind the footer */
+    /*margin-bottom: 0px;
+    /* Adjust this value based on the height of your footer */
+}
+
+
+/* Reset some default browser styles */
+h1,
+h2,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+/* Style the logo */
+.logo img {
+    width: 150px;
+    /* Adjust the width as needed */
+}
+
+/* Style the cart button */
+.cart-button .button {
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* You can also override Bootstrap's btn-primary class directly if you prefer */
+.btn-primary {
+    background-color: white;
+    color: black;
+    border: 2px solid #000000;
+}
+
+/* Style the navigation */
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+/*
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+*/
+/* General styling for all nav links */
+nav ul li a {
+    color: var(--main-color);
+    /* Bright color */
+    text-decoration: none;
+}
+
+/* Specific styling for active nav link */
+nav ul li a.active {
+    color: #000000 !important;
+    /* Default color */
+}
+
+/* style the footer if needed */
+.fixed-footer {
+    position: relative;
+    bottom: 0;
+    height: 200px;
+    width: 100%;
+    margin-top: auto;
+    background-color: var(--main-color);
+}
+
+.row-centered-columns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-form-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.contact-form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form-container button {
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* make sure <main> takes enough space */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.flex-item-grow {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center children vertically */
+    align-items: center;
+    /* Center children horizontally */
+}
+
+/* message thanks */
+.thank-you-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.thank-you-container h1 {
+    font-size: 48px;
+    /* Adjust size to your preference */
+    margin-bottom: 20px;
+}
+
+.thank-you-container p {
+    font-size: 24px;
+    /* Adjust size to your preference */
+}
+
+/* FAQ */
+.faq-main {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    /* Sets the height of the section to 100% of the viewport height */
+    text-align: center;
+    /* Centers the text horizontally */
+}
+
+.faq-main h1 {
+    margin: 0;
+    /* Removes default margin from the heading */
+}
+
+.faq-category {
+    margin: 20px;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background-color: #f9f9f9;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.faq-answer {
+    display: none;
+    /* Hide answers initially */
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+}
+
+/* Styles for the contact-info section */
+.contact-info {
+    background-color: #f9f9f9;
+    /* Light grey background */
+    padding: 20px;
+    /* Padding around the text */
+    text-align: center;
+    /* Center the text */
+    border: 1px solid #e0e0e0;
+    /* Light border around the section */
+    border-radius: 8px;
+    /* Rounded corners */
+    margin: 60px;
+    /* Space outside the section */
+    font-size: 18px;
+    /* Larger text for readability */
+}
+
+.contact-info a {
+    color: #007BFF;
+    /* Link color (Bootstrap default blue) */
+    text-decoration: none;
+    /* Remove underline */
+    font-weight: bold;
+    /* Bold text for emphasis */
+    padding: 5px;
+    /* Padding around the link text */
+    border-radius: 4px;
+    /* Slight rounding of corners */
+}
+
+.contact-info a:hover {
+    background-color: #007BFF;
+    /* Link color on hover */
+    color: #ffffff;
+    /* Text color on hover */
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #44c767;
+    /* Change color to your preference */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    /* Hidden by default */
+    z-index: 1000;
+}
+
+
+.quantity-input {
+    width: 50px;
+}
+
+/* styles.css */
+.product-image {
+    width: 50%;
+    height: auto;
+}
+
+.payment-logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.form-check-label {
+    display: flex;
+    align-items: center;
+}

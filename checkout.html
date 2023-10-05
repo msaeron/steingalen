@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SteinGalen - Checkout</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="flex-container">
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="fig/logo/steingalen_logo.svg" alt="Steingalen Logo">
+            </a>
+        </div>
+        <div class="cart-button">
+            <a href="cart.html" class="button"><strong>CART</strong></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="apparel.html"><strong>APPAREL</strong></a></li>
+                <li><a href="contact.html"><strong>CONTACT</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 mb-4 text-center">
+                    <h1><strong>YOUR ORDER</strong></h1>
+                </div>
+            </div>
+
+            <!-- Order Items -->
+            <div id="order-items-container" class="row justify-content-center"></div>
+
+            <!-- Total Price -->
+            <div id="total-price-row" class="row"></div>
+        </div>
+        <hr>
+
+        <!-- FORM -->
+        <div class="container mb-4 mt-4">
+            <div class="col-md-12 text-center">
+                <h3><strong>Billing and shipping information</strong></h3>
+            </div>
+            <form>
+                <!-- Row 1 -->
+                <div class="row justify-content-center">
+                    <div class="col-md-3"> <!-- Column 1 -->
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                        </div>
+                    </div>
+                    <div class="col-md-3"> <!-- Column 2 -->
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="row justify-content-center">
+                    <div class="col-md-3"> <!-- Column 1 -->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="col-md-3"> <!-- Column 2 -->
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="row justify-content-center">
+                    <div class="col-md-6"> <!-- Both Columns -->
+                        <div class="form-group">
+                            <label for="address1">Address 1</label>
+                            <input type="text" class="form-control" id="address1" name="address1" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="row justify-content-center">
+                    <div class="col-md-6"> <!-- Both Columns -->
+                        <div class="form-group">
+                            <label for="address2">Address 2</label>
+                            <input type="text" class="form-control" id="address2" name="address2" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 5 -->
+                <div class="row justify-content-center">
+                    <div class="col-md-3"> <!-- Column 1 -->
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city" name="city" required>
+                        </div>
+                    </div>
+                    <div class="col-md-3"> <!-- Column 2 -->
+                        <div class="form-group">
+                            <label for="postalCode">Postal Code</label>
+                            <input type="text" class="form-control" id="postalCode" name="postalCode" required>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <hr>
+
+
+        <!-- Payment Method Section -->
+        <section class="payment-method py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Payment Method</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-2">
+                        <!-- Card Payment Method -->
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="card" value="card"
+                                checked>
+                            <label class="form-check-label d-flex align-items-center" for="card">
+                                <img src="fig/payment_methods/card.svg" alt="Card Logo" class="payment-logo">
+                                Card
+                            </label>
+                        </div>
+                        <!-- Vipps Payment Method -->
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="vipps" value="vipps">
+                            <label class="form-check-label d-flex align-items-center" for="vipps">
+                                <img src="fig/payment_methods/vipps.svg" alt="Vipps Logo" class="payment-logo">
+                                Vipps
+                            </label>
+                        </div>
+                        <!-- Apple Pay Payment Method -->
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="applePay"
+                                value="applePay">
+                            <label class="form-check-label d-flex align-items-center" for="applePay">
+                                <img src="fig/payment_methods/apple_pay.svg" alt="Apple Pay Logo" class="payment-logo">
+                                Apple Pay
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class=" col-md-8 text-right">
+            <button type="button" class="btn btn-primary" onclick="placeOrder()">Order</button>
+        </div>
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer class="fixed-footer text-white text-center py-4">
+        <div class="container">
+            <div class="social-media mb-4 mt-4">
+                <a href="faq.html" class="text-white mx-2">FAQ</a>
+            </div>
+            <p class="mb-0">&copy; 2023 Steingalen. All rights reserved.</p>
+            <div class="mb-3 mt-3">
+                <a href="#" class="text-white mx-2">Facebook</a> |
+                <a href="#" class="text-white mx-2">Instagram</a> |
+                <a href="#" class="text-white mx-2">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+
+    <script>
+        window.onload = function () {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const orderItemsContainer = document.getElementById('order-items-container');
+            const totalPriceRow = document.getElementById('total-price-row');
+            let totalPrice = 0;
+
+            cart.forEach(product => {
+                const productTotalPrice = (parseFloat(product.price) * parseInt(product.quantity)).toFixed(2);
+                totalPrice += parseFloat(productTotalPrice);
+
+                const orderItemHTML = `
+                    <div class="col-md-3 text-center mb-4">
+                        <img src="fig/products/${product.imageName}" alt="${product.productName}" class="img-fluid product-image">
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <p><strong>${product.productName}</strong></p>
+                        <p>Size: ${product.size}</p>
+                        <p>Quantity: ${product.quantity}</p>
+                        <p>Total Price: NOK ${productTotalPrice}</p>
+                    </div>
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                `;
+
+                orderItemsContainer.innerHTML += orderItemHTML;
+            });
+
+            const totalRowHTML = `
+                <div class="col-md-6 offset-md-2 text-right">
+                    <strong>Total: NOK ${totalPrice.toFixed(2)}</strong>
+                </div>
+            `;
+
+            totalPriceRow.innerHTML = totalRowHTML;
+        }
+    </script>
+
+    <script type="text/javascript">
+        function placeOrder() {
+            // Empty the cart
+            localStorage.removeItem('cart');
+
+            // Redirect to the order_thanks.html page
+            window.location.href = 'order_thanks.html';
+        }
+    </script>
+
+</body>
+
+</html>
