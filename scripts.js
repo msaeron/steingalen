@@ -23,7 +23,7 @@ function createProductCard(imageName, productName, price, mdnum, mbnum) {
                 <img src="fig/products/${imageName}" class="card-img-top" alt="${productName}">
                 <div class="card-body">
                     <h5 class="card-title">${productName}</h5>
-                    <p class="card-text">$${price}</p>
+                    <p class="card-text">NOK ${price}</p>
 
                     <label for="${productName}-size-selection" class="d-block">Size</label>
                     <select id="${productName}-size-selection" class="form-control mb-3">

@@ -50,7 +50,7 @@ header {
     text-decoration: none;
 }
 
-/* You can also override Bootstrap's btn-primary class directly if you prefer */
+/* Override Bootstrap's btn-primary class directly */
 .btn-primary {
     background-color: white;
     color: black;
@@ -67,12 +67,6 @@ nav ul li {
     list-style-type: none;
 }
 
-/*
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
-*/
 /* General styling for all nav links */
 nav ul li a {
     color: var(--main-color);
@@ -252,7 +246,6 @@ nav ul li a.active {
     left: 50%;
     transform: translateX(-50%);
     background-color: #44c767;
-    /* Change color to your preference */
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
